@@ -1,0 +1,309 @@
+/* ========================================= */
+/* === Page Layout & Sticky Footer Fix ===== */
+/* ========================================= */
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* الأهم: يجعل الـ body يأخذ على الأقل ارتفاع الشاشة بالكامل */
+}
+
+header {
+    flex-grow: 1; /* الأهم: يجعل الهيدر يتمدد ويأخذ كل المساحة المتاحة، مما يدفع الفوتر للأسفل */
+}
+
+/* ========================================= */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+nav{
+    background-color: #1E202B; 
+}
+nav li{
+    padding-left: 2rem;
+    
+}
+
+.nav-link{
+    color: white;
+}
+.nav-item:hover a{
+    color: #0DCAF0;
+    border: 1px solid #0DCAF0;
+    border-radius: 1.3rem;
+    -webkit-border-radius: 1.3rem;
+    -moz-border-radius: 1.3rem;
+    -ms-border-radius: 1.3rem;
+    -o-border-radius: 1.3rem;
+}
+header{
+    padding-top: 8rem;
+    background-image: url(../Weather.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+header .container input{
+    width: 100%;
+    background-color: #1E202B;
+    height: 3.5rem;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    border: 0;
+    padding-left: 1rem;
+    color: white;
+    
+}
+header .container .btn{
+    width: 6rem;
+    border-radius: 2rem;
+    background-color: #009AD8;
+    color: white;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
+    text-align: center;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+}
+#containerSearch{
+    position: relative;
+    
+}
+/* ////////////////////////////////////////////// */
+.row{
+     box-sizing: border-box;
+}
+.wToday{
+    padding-top: 7px;
+}
+.date{
+    background-color: #2a2e3e;
+    color: #BFC1CA;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-top: .4rem;
+    padding-bottom: .2rem;
+    margin-top: 2rem;
+
+}
+.weather{
+    background-color: #323646;
+    padding: 2rem 0;
+    padding-left: 1rem;
+}
+.weather p{
+    color: #BFC1CA;
+
+}
+.weather h2{
+    color: white;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+}
+.weather small{
+    color: #009AD8;
+    font-size: 1.2rem;
+   
+}
+#weatherConditionIcon{
+    position: absolute;
+    left: 9rem;
+}
+.detail-icons i{
+    color: #BFC1CA;
+    font-size: 1.8rem;
+}
+.detail-icons sup{
+    color: white;
+    font-size: 1rem;
+}
+
+/* /////////////////////////////////////// */
+.footer {
+      background-color: #252733;
+      padding: 40px 0;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .subscribe-box {
+    border-radius: 2rem;
+      display: inline-flex;
+      position: relative;
+      background-color: #1c1e26;
+      border-radius: 25px;
+      overflow: hidden;
+      max-width: 500px;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .subscribe-box input {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .subscribe-box button {
+      background-color: #03a9f4;
+      border: none;
+      color: #fff;
+      padding: 10px 25px;
+      font-size: 14px;
+      border-radius: 2rem;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+
+      
+
+    }
+
+    .subscribe-box button:hover {
+      background-color: #0288d1;
+    }
+
+    .social-icons {
+      margin: 20px 0;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 8px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      background: #1c1e26;
+      color: #03a9f4;
+      text-align: center;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      background: #03a9f4;
+      color: #fff;
+    }
+
+    .footer p {
+      font-size: 14px;
+      margin: 0;
+      color: #aaa;
+    }
+
+
+/* //////////////////////////// */
+/* ========================================= */
+/* ============== Responsive CSS =========== */
+/* ========================================= */
+
+/* ========================================= */
+/* =========== Tablet View Fixes =========== */
+/* ========================================= */
+
+/* This targets tablets (from 768px up to 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    /* استهداف الحاوية التي تجمع درجة الحرارة والأيقونة في البطاقة الأولى */
+    .col-lg-4:first-child .weather .d-flex.align-items-center {
+        flex-wrap: wrap;         /* السماح للعناصر بالنزول لسطر جديد عند ضيق المساحة */
+        justify-content: center; /* توسيط العناصر عندما تنزل لسطر جديد */
+        text-align: center;
+    }
+
+    /* جعل درجة الحرارة تأخذ عرض 100% لدفع الأيقونة للأسفل بشكل منظم */
+    .col-lg-4:first-child .weather .d-flex.align-items-center h2 {
+       width: 100%;
+       margin-bottom: 0.5rem; /* مسافة بسيطة تحت درجة الحرارة */
+    }
+
+    /* استهداف حاوية الأيقونات الثلاث في الأسفل (الرطوبة، الرياح..) */
+    .col-lg-4:first-child .detail-icons.d-flex {
+        flex-wrap: wrap;         /* السماح لهم أيضاً بالنزول لسطر جديد */
+        justify-content: center; /* وتوسيطهم */
+    }
+
+    /* يمكن تصغير حجم الخط قليلاً ليتناسب أكثر مع حجم التابلت */
+    .weather h2 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Small screens (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    header {
+        padding-top: 6rem;
+    }
+
+    /* تعديل زر البحث ليتناسب مع الجوال */
+    header .container .btn {
+        position: absolute;
+        right: 15px; /* تقليل المسافة من اليمين */
+        bottom: 5px; /* تقليل المسافة من الأسفل */
+        width: 5rem; /* تصغير عرض الزر */
+        height: calc(3.5rem - 10px); /* تعديل الارتفاع */
+        line-height: 1.5;
+    }
+    
+    header .container input {
+       /* إضافة مساحة داخلية على اليمين لمنع النص من الدخول تحت الزر */
+       padding-right: 6rem; 
+    }
+
+    .weather h2 {
+        font-size: 2.5rem; /* تصغير حجم خط درجة الحرارة */
+    }
+    
+    /* إزالة تحديد الموضع المطلق للأيقونة وجعلها تظهر بشكل طبيعي */
+    #weatherConditionIcon {
+        position: static; /* الأهم: إلغاء الـ position absolute */
+        left: auto;
+    }
+    
+    /* تعديل كرت الطقس الرئيسي ليستخدم Flexbox لترتيب العناصر */
+    .weather .d-flex.align-items-center {
+        flex-wrap: wrap; /* السماح للعناصر بالنزول لسطر جديد إذا لم تكن هناك مساحة */
+        justify-content: center;
+        text-align: center;
+    }
+
+     .weather .d-flex.align-items-center h2 {
+        width: 100%; /* جعل درجة الحرارة تأخذ عرض كامل */
+        margin-bottom: 1rem;
+     }
+
+    /* تعديل تفاصيل الطقس (رياح، رطوبة..) */
+    .detail-icons.d-flex {
+        justify-content: center;
+    }
+
+    .subscribe-box {
+        flex-direction: column; /* جعل حقل الإدخال والزر تحت بعض */
+        border-radius: 15px;
+        background: transparent;
+    }
+    .subscribe-box input {
+        border-radius: 25px;
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: #1c1e26;
+    }
+    .subscribe-box button {
+        border-radius: 25px;
+    }
+}
