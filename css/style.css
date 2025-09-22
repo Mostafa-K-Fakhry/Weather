@@ -1,3 +1,21 @@
+/* ========================================= */
+/* === Page Layout & Sticky Footer Fix ===== */
+/* ========================================= */
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* الأهم: يجعل الـ body يأخذ على الأقل ارتفاع الشاشة بالكامل */
+}
+
+header {
+    flex-grow: 1; /* الأهم: يجعل الهيدر يتمدد ويأخذ كل المساحة المتاحة، مما يدفع الفوتر للأسفل */
+}
+
+/* ========================================= */
 *{
     margin: 0;
     padding: 0;
@@ -65,6 +83,9 @@ header .container .btn{
 .row{
      box-sizing: border-box;
 }
+.wToday{
+    padding-top: 7px;
+}
 .date{
     background-color: #2a2e3e;
     color: #BFC1CA;
@@ -116,7 +137,9 @@ header .container .btn{
     }
 
     .subscribe-box {
+    border-radius: 2rem;
       display: inline-flex;
+      position: relative;
       background-color: #1c1e26;
       border-radius: 25px;
       overflow: hidden;
@@ -139,8 +162,15 @@ header .container .btn{
       background-color: #03a9f4;
       border: none;
       color: #fff;
-      padding: 12px 25px;
+      padding: 10px 25px;
       font-size: 14px;
+      border-radius: 2rem;
+      position: absolute;
+      right: 2px;
+      top: 2px;
+
+      
+
     }
 
     .subscribe-box button:hover {
@@ -176,3 +206,104 @@ header .container .btn{
       color: #aaa;
     }
 
+
+/* //////////////////////////// */
+/* ========================================= */
+/* ============== Responsive CSS =========== */
+/* ========================================= */
+
+/* ========================================= */
+/* =========== Tablet View Fixes =========== */
+/* ========================================= */
+
+/* This targets tablets (from 768px up to 992px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    
+    /* استهداف الحاوية التي تجمع درجة الحرارة والأيقونة في البطاقة الأولى */
+    .col-lg-4:first-child .weather .d-flex.align-items-center {
+        flex-wrap: wrap;         /* السماح للعناصر بالنزول لسطر جديد عند ضيق المساحة */
+        justify-content: center; /* توسيط العناصر عندما تنزل لسطر جديد */
+        text-align: center;
+    }
+
+    /* جعل درجة الحرارة تأخذ عرض 100% لدفع الأيقونة للأسفل بشكل منظم */
+    .col-lg-4:first-child .weather .d-flex.align-items-center h2 {
+       width: 100%;
+       margin-bottom: 0.5rem; /* مسافة بسيطة تحت درجة الحرارة */
+    }
+
+    /* استهداف حاوية الأيقونات الثلاث في الأسفل (الرطوبة، الرياح..) */
+    .col-lg-4:first-child .detail-icons.d-flex {
+        flex-wrap: wrap;         /* السماح لهم أيضاً بالنزول لسطر جديد */
+        justify-content: center; /* وتوسيطهم */
+    }
+
+    /* يمكن تصغير حجم الخط قليلاً ليتناسب أكثر مع حجم التابلت */
+    .weather h2 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Small screens (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    header {
+        padding-top: 6rem;
+    }
+
+    /* تعديل زر البحث ليتناسب مع الجوال */
+    header .container .btn {
+        position: absolute;
+        right: 15px; /* تقليل المسافة من اليمين */
+        bottom: 5px; /* تقليل المسافة من الأسفل */
+        width: 5rem; /* تصغير عرض الزر */
+        height: calc(3.5rem - 10px); /* تعديل الارتفاع */
+        line-height: 1.5;
+    }
+    
+    header .container input {
+       /* إضافة مساحة داخلية على اليمين لمنع النص من الدخول تحت الزر */
+       padding-right: 6rem; 
+    }
+
+    .weather h2 {
+        font-size: 2.5rem; /* تصغير حجم خط درجة الحرارة */
+    }
+    
+    /* إزالة تحديد الموضع المطلق للأيقونة وجعلها تظهر بشكل طبيعي */
+    #weatherConditionIcon {
+        position: static; /* الأهم: إلغاء الـ position absolute */
+        left: auto;
+    }
+    
+    /* تعديل كرت الطقس الرئيسي ليستخدم Flexbox لترتيب العناصر */
+    .weather .d-flex.align-items-center {
+        flex-wrap: wrap; /* السماح للعناصر بالنزول لسطر جديد إذا لم تكن هناك مساحة */
+        justify-content: center;
+        text-align: center;
+    }
+
+     .weather .d-flex.align-items-center h2 {
+        width: 100%; /* جعل درجة الحرارة تأخذ عرض كامل */
+        margin-bottom: 1rem;
+     }
+
+    /* تعديل تفاصيل الطقس (رياح، رطوبة..) */
+    .detail-icons.d-flex {
+        justify-content: center;
+    }
+
+    .subscribe-box {
+        flex-direction: column; /* جعل حقل الإدخال والزر تحت بعض */
+        border-radius: 15px;
+        background: transparent;
+    }
+    .subscribe-box input {
+        border-radius: 25px;
+        margin-bottom: 10px;
+        text-align: center;
+        background-color: #1c1e26;
+    }
+    .subscribe-box button {
+        border-radius: 25px;
+    }
+}
