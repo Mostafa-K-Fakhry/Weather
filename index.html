@@ -56,7 +56,7 @@
         </div>
       </div>
     </nav>
-    <header class="w-100">
+    <header class=" w-100">
       <div class="container">
         <div class="container" id="containerSearch">
           <input
@@ -68,12 +68,82 @@
           <button class="btn" id="btn">Find</button>
         </div>
         <div class="row">
-        
+          <div class="col-lg-4  mb-4">
+            <div class="weather-card">
+              <div class="date d-flex justify-content-between">
+                <p id="todayDay">Tuesday</p>
+                <p id="todayDate">23 September</p>
+              </div>
+              <div class="weather">
+                <p id="location">Asyut</p>
+                <div class="d-flex align-items-center">
+                  <h2 id="todayTemp">34.4 °C</h2>
+                  <img
+                    id="weatherConditionIcon"
+                    src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                    alt="weather icon"
+                    class="ms-4"
+                  />
+                </div>
+                <small id="weatherConditionText">Sunny</small>
+                <div class="detail-icons d-flex mt-3">
+                  <div class="me-3">
+                    <i class="fas fa-umbrella"></i>
+                    <sup>20%</sup>
+                  </div>
+                  <div class="me-3">
+                    <i class="fas fa-wind"></i>
+                    <sup>18km/h</sup>
+                  </div>
+                  <div class="me-3">
+                    <i class="far fa-compass"></i>
+                    <sup>East</sup>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4  mb-4">
+            <div class="weather-card text-center">
+              <div class="date">
+                <p id="tomorrowDay">Wednesday</p>
+              </div>
+              <div class="weather">
+                <img
+                  id="tomorrowIcon"
+                  src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                  alt="weather icon"
+                />
+                <h3 class="text-white mt-3">33.3 °C</h3>
+                <p class="text-white-50">22.4 °C</p>
+                <small id="tomorrowConditionText">Sunny</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4  mb-4">
+            <div class="weather-card text-center">
+              <div class="date">
+                <p id="afterTomorrowDay">Thursday</p>
+              </div>
+              <div class="weather">
+                <img
+                  id="afterTomorrowIcon"
+                  src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                  alt="weather icon"
+                />
+                <h3 class="text-white mt-3">35.0 °C</h3>
+                <p class="text-white-50">23.1 °C</p>
+                <small id="afterTomorrowConditionText">Sunny</small>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
-    <footer class="footer">
-    <div class="subscribe-box">
+    <footer class="footer  ">
+    <div class="subscribe-box container">
       <input type="email" placeholder="Enter your email to subscribe...">
       <button>Subscribe</button>
     </div>
