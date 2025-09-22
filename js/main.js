@@ -15,7 +15,7 @@ async function getWeather(){
 
     AllWeather = ``;
     AllWeather =`
-    <div class="col-md-4 pt-1">
+    <div class="wToday col-lg-4  mb-4">
             <div class="date">
               <pre id="today" class="">${day}            ${dayN} ${month}</pre>
             </div>
@@ -57,7 +57,7 @@ async function getWeather(){
         var nextDate =new Date(forecastday[i].date);
        var nextDay =nextDate.toLocaleDateString("en-us",{weekday:"long"});
         AllWeather+=`
-        <div class="col-md-4 text-center">
+        <div class="col-lg-4  mb-4 text-center">
             <div class="date">
               <p id="nextday" >${nextDay}</p>
             </div>
@@ -84,4 +84,5 @@ async function getWeather(){
     )
 }
 getWeather();
+
 
